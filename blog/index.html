@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EzInnovation Blog</title>
+    <style>
+      :root {
+        --primary: #3aa6ff;
+        --primary-2: #8f5cff;
+        --text-dark: #f5f8ff;
+        --text-muted: #9fb0d0;
+        --background: #09111f;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        background: radial-gradient(circle at center top, #14284b 0%, var(--background) 45%, #050b15 100%);
+        color: var(--text-dark);
+      }
+
+      .container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.3rem;
+        background: linear-gradient(90deg, var(--primary), var(--primary-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .back-link {
+        color: #d8e3f9;
+        text-decoration: none;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 4vw, 3rem);
+        margin-bottom: 0.5rem;
+      }
+
+      .intro {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+      }
+
+      .post-list {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .post-card {
+        background: linear-gradient(180deg, rgba(20, 36, 64, 0.96), rgba(10, 20, 38, 0.96));
+        border: 1px solid rgba(58, 166, 255, 0.32);
+        border-radius: 16px;
+        padding: 1.25rem;
+      }
+
+      .post-date {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .post-title {
+        display: inline-block;
+        margin-top: 0.4rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+        color: #f5f8ff;
+        text-decoration: none;
+      }
+
+      .post-title:hover {
+        color: var(--primary);
+      }
+
+      .excerpt {
+        color: var(--text-muted);
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a class="logo" href="../index.html">EzInnovation</a>
+        <a class="back-link" href="../index.html">← Back to home</a>
+      </nav>
+
+      <main>
+        <h1>EzInnovation Blog</h1>
+        <p class="intro">Updates, release notes, and behind-the-scenes development posts from the EzInnovation team.</p>
+
+        <section class="post-list" aria-label="Blog posts">
+          <article class="post-card">
+            <div class="post-date">April 9, 2026</div>
+            <a class="post-title" href="./posts/first-post.html">Welcome to the EzInnovation Blog</a>
+            <p class="excerpt">Our very first post is live. Learn what we'll share here and what's coming next for plugins, tools, and server creators.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

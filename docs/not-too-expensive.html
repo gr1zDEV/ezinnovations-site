@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NotTooExpensive Documentation | EzInnovation</title>
+    <style>
+      :root {
+        --primary: #3aa6ff;
+        --primary-2: #8f5cff;
+        --text-dark: #f5f8ff;
+        --text-muted: #9fb0d0;
+        --background: #09111f;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        background: radial-gradient(circle at center top, #14284b 0%, var(--background) 45%, #050b15 100%);
+        color: var(--text-dark);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(5, 11, 21, 0.82);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(143, 92, 255, 0.18);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+      }
+
+      .nav-inner {
+        width: 100%;
+        max-width: 980px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.3rem;
+        background: linear-gradient(90deg, var(--primary), var(--primary-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .back-link {
+        color: #d8e3f9;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .eyebrow {
+        margin-top: 1rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-size: 0.8rem;
+      }
+
+      h1 {
+        margin: 0.4rem 0 0.5rem;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+      }
+
+      .lead {
+        margin: 0 0 1rem;
+        font-size: 1.1rem;
+        color: #d8e3f9;
+      }
+
+      .meta {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+      }
+
+      article {
+        background: linear-gradient(180deg, rgba(20, 36, 64, 0.96), rgba(10, 20, 38, 0.96));
+        border: 1px solid rgba(58, 166, 255, 0.32);
+        border-radius: 18px;
+        padding: 1.6rem;
+        line-height: 1.7;
+      }
+
+      h2 {
+        margin-top: 1.6rem;
+        margin-bottom: 0.6rem;
+        font-size: 1.4rem;
+      }
+
+      h2:first-child {
+        margin-top: 0;
+      }
+
+      p,
+      li {
+        color: #e0e9f9;
+      }
+
+      code {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        padding: 0.05rem 0.4rem;
+        color: #c9e6ff;
+      }
+
+      pre {
+        margin: 0.75rem 0;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 0.9rem 1rem;
+        overflow-x: auto;
+      }
+
+      pre code {
+        border: none;
+        background: transparent;
+        padding: 0;
+      }
+
+      a {
+        color: var(--primary);
+      }
+
+      .note {
+        margin-top: 1rem;
+        padding: 0.9rem 1rem;
+        border-radius: 12px;
+        border: 1px solid rgba(143, 92, 255, 0.35);
+        background: rgba(143, 92, 255, 0.08);
+        color: #ded4ff;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a class="logo" href="../index.html">EzInnovation</a>
+        <a class="back-link" href="../index.html">← Back to home</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="eyebrow">Documentation</div>
+      <h1>NotTooExpensive</h1>
+      <p class="lead">A lightweight economy-balancing plugin that keeps progression fair and server pricing under control.</p>
+      <div class="meta">README-based documentation page • April 10, 2026</div>
+
+      <article>
+        <h2>Overview</h2>
+        <p>
+          <strong>NotTooExpensive</strong> helps server owners enforce sensible price limits across economy-related systems.
+          It prevents accidental or abusive pricing spikes so players can progress naturally without economy lockouts.
+        </p>
+
+        <h2>Features</h2>
+        <ul>
+          <li>Configurable maximum and minimum pricing thresholds.</li>
+          <li>Protection against unrealistic economy values.</li>
+          <li>Simple setup with readable defaults.</li>
+          <li>Designed for low-overhead, production server usage.</li>
+        </ul>
+
+        <h2>Installation</h2>
+        <ol>
+          <li>Download the latest <code>NotTooExpensive.jar</code>.</li>
+          <li>Place the jar into your server's <code>plugins/</code> folder.</li>
+          <li>Restart the server to generate configuration files.</li>
+          <li>Adjust values in the config and restart/reload.</li>
+        </ol>
+
+        <h2>Quick Configuration</h2>
+        <p>Example configuration structure:</p>
+        <pre><code>limits:
+  minimum-price: 1
+  maximum-price: 50000
+  strict-mode: true
+
+messages:
+  warn-player: true
+  log-adjustments: true</code></pre>
+
+        <h2>Commands</h2>
+        <ul>
+          <li><code>/nottooexpensive reload</code> — reloads plugin configuration.</li>
+          <li><code>/nottooexpensive status</code> — shows current active limits.</li>
+        </ul>
+
+        <h2>Permissions</h2>
+        <ul>
+          <li><code>nottooexpensive.admin</code> — access admin subcommands.</li>
+          <li><code>nottooexpensive.reload</code> — reload plugin config.</li>
+        </ul>
+
+        <h2>Support</h2>
+        <p>
+          Need help or want to suggest a feature? Reach out through the EzInnovation community channels and include your
+          server version, plugin version, and relevant logs to speed up troubleshooting.
+        </p>
+
+        <div class="note">
+          If you share your original README contents, this page can be expanded into a fully faithful section-by-section conversion.
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
